@@ -154,7 +154,7 @@ rock_paper_scissors() {
 # Menu options
 PS3="Please select your option: "
 
-options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me important details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit") 
+options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me the details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit") 
 
 main_menu() {
     select opt in "${options[@]}"; do
@@ -182,12 +182,14 @@ main_menu() {
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
-            "Tell me important details about the collection")
+            "Tell me the details about the collection")
                 printGreen "Connecting to Stargazes database..." 
                 sleep 3
                 echo "There are a total of 8888 NFTs in the Onchain OMies collection."
                 sleep 3
                 echo "The floor price is approximately around 180 OM."
+                sleep 3
+                echo "Best offer is approximately around 170 OM."
                 sleep 3
                 echo "OMies are a diverse bunch of onchain folks lookin for new buddies."
                 sleep 5
