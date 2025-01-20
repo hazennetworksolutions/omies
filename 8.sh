@@ -94,6 +94,7 @@ select opt in "${options[@]}"; do
             printGreen "Sending message to JP Mullin..."
             sleep 3
             printGreen "Message has been sent to JP Mullin!"
+            sleep 2
             echo -e "\nReturning to the main menu..."
             sleep 2
             clear
