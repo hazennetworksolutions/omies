@@ -76,10 +76,41 @@ clear
 printLogo
 printGreen "Welcome to Hazen's favorite Onchain OMies NFT reveal party"
 
+# Simple Number Guessing Game Function
+play_game() {
+    printGreen "Welcome to the Number Guessing Game!"
+    printGreen "I have chosen a number between 1 and 100. Can you guess it?"
+
+    # Generate a random number between 1 and 100
+    secret_number=$((RANDOM % 100 + 1))
+    attempts=0
+
+    while true; do
+        printGreen "Enter your guess: "
+        read user_guess
+        attempts=$((attempts + 1))
+
+        # Validate user input
+        if [[ ! "$user_guess" =~ ^[0-9]+$ ]]; then
+            printRed "Please enter a valid number."
+            continue
+        fi
+
+        if ((user_guess < secret_number)); then
+            printRed "Too low! Try again."
+        elif ((user_guess > secret_number)); then
+            printRed "Too high! Try again."
+        else
+            printGreen "Congratulations! You guessed the number $secret_number in $attempts attempts."
+            break
+        fi
+    done
+}
+
 # Menu options
 PS3="Please select your option: "
 
-options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to space" "Show total NFTs in Onchain OMies collection" "Exit")
+options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to space" "Show total NFTs in Onchain OMies collection" "Play a guessing game" "Exit")
 
 select opt in "${options[@]}"; do
     case $opt in
@@ -120,6 +151,13 @@ select opt in "${options[@]}"; do
             printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
             sleep 5
             # Return to the main menu
+            clear
+            bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
+            continue
+            ;;
+
+        "Play a guessing game")
+            play_game
             clear
             bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
             continue
