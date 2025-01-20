@@ -58,7 +58,7 @@ LOGO="
                                                                                                     
                                                                                                 
                                                                                                  
-Hazen Network Solutions 2025 All rights reserved."
+Hazen Network Solutions 2025 All rights reserved. OMie #3166 Rarity rank #1"
 GREEN="\e[1m\e[1;32m"
 NC="\e[0m"
 
@@ -95,7 +95,7 @@ play_game() {
     printGreen "I have chosen a number between 1 and 88. Can you guess it?"
     sleep 2
 
-    # Generate a random number between 1 and 100
+    # Generate a random number between 1 and 88
     secret_number=$((RANDOM % 88 + 1))
     attempts=0
 
