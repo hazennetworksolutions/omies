@@ -1,5 +1,5 @@
 #!/bin/bash
-
+clear
 # Renkli yazdırma fonksiyonları
 printGreen() {
     echo -e "\033[32m$1\033[0m"
