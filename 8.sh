@@ -57,7 +57,7 @@ LOGO="
                                                                                                     
                                                                                                 
                                                                                                  
-Hazen Network Solutions 2025 All rights reserved."
+Hazen Network Solutions 2025 All rights reserved. OMie #3166 Rarity Rank #1"
 GREEN="\e[1m\e[1;32m"
 NC="\e[0m"
 
@@ -164,7 +164,7 @@ main_menu() {
                 printGreen "Sending message to JP Mullin..."
                 sleep 3
                 printGreen "Message has been sent to JP Mullin!"
-                sleep 2
+                sleep 3
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
@@ -175,15 +175,15 @@ main_menu() {
 
             "Send a rocket to the space") 
                 printGreen "Sending rocket to the space... Please wait." 
-                sleep 2
+                sleep 3
                 echo "We can't but these guys can help you: https://www.spacex.com"
                 sleep 5
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
             "Show total NFTs in Onchain OMies collection")
-                printGreen "Connecting Mullin's computer" 
-                sleep 2
+                printGreen "Connecting Stargaze's database" 
+                sleep 3
                 printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
                 sleep 5
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
