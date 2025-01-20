@@ -154,7 +154,7 @@ rock_paper_scissors() {
 # Menu options
 PS3="Please select your option: "
 
-options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Show total number of NFTs in Onchain OMies collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit") 
+options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me important details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit") 
 
 main_menu() {
     select opt in "${options[@]}"; do
@@ -183,7 +183,7 @@ main_menu() {
                 ;;
 
             "Tell me important details about the collection")
-                printGreen "Connecting to Stargazes database" 
+                printGreen "Connecting to Stargazes database..." 
                 sleep 3
                 echo "There are a total of 8888 NFTs in the Onchain OMies collection."
                 sleep 3
