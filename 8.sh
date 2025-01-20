@@ -110,6 +110,8 @@ play_game() {
             printRed "Too high! Try again."
         else
             printGreen "Congratulations! You guessed the number $secret_number in $attempts attempts."
+            sleep 5
+            printGreen "You guessed it right!"
             break
         fi
     done
