@@ -148,6 +148,7 @@ rock_paper_scissors() {
     else
         echo "You lose!"
     fi
+    sleep 4
 }
 
 # Menu options
@@ -169,10 +170,9 @@ main_menu() {
                 ;;
 
             "Show Hazen's favorite OMies NFT")
-    printGreen "Showing Hazen's favorite OMies NFT"
-    bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8888.sh)
-    ;;
-
+                printGreen "Showing Hazen's favorite OMies NFT"
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8888.sh)
+                ;;
 
             "Send a rocket to the space") 
                 printGreen "Sending rocket to the space... Please wait." 
@@ -183,7 +183,7 @@ main_menu() {
                 ;;
 
             "Show total NFTs in Onchain OMies collection")
-                printGreen "Connecting Stargaze's database" 
+                printGreen "Connecting to Stargaze's database" 
                 sleep 3
                 printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
                 sleep 5
