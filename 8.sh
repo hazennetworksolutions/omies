@@ -92,7 +92,11 @@ select opt in "${options[@]}"; do
             printGreen "Sending message to JP Mullin..."
             sleep 2
             printGreen "Message has been sent to JP Mullin!"
-            break
+            echo -e "\nReturning to the main menu..."
+            sleep 2
+            clear
+            # Show the menu again
+            continue
             ;;
 
         "Show Hazen's favorite OMies NFT")
@@ -111,3 +115,4 @@ select opt in "${options[@]}"; do
             ;;
     esac
 done
+
