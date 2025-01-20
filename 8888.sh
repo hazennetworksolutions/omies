@@ -193,7 +193,7 @@ clear
 printAsciiArt "$ascii3"
 
 # Complete the operation
-printGreen "You can go and check Hazen's favorite here: https://www.stargaze.zone/m/onchain-omies/3166
+printGreen "You can go and check Hazen's favorite here: https://www.stargaze.zone/m/onchain-omies/4732
 For the entire collection: https://www.stargaze.zone/m/onchain-omies/tokens"
 
 # Wait for 10 seconds
