@@ -87,14 +87,14 @@ options=("Send DM to the JP Mullin" "Show Hazen's favorite OMies NFT" "Exit")
 
 select opt in "${options[@]}"; do
     case $opt in
-        "Install Warden")
-            printGreen "Starting Warden installation..."
+        "Send DM to the JP Mullin")
+            printGreen "Sending DM to the JP Mullin..."
             bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/warden/refs/heads/main/wardentest2.sh)
             break
             ;;
-        "Install Slinky")
-            printGreen "Starting Slinky installation..."
-            bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/warden/refs/heads/main/slinky.autoscript.sh)
+        "Show Hazen's favorite OMies NFT")
+            printGreen "Show Hazen's favorite OMies NFT"
+            bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8888.sh)
             break
             ;;
         "Exit")
