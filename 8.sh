@@ -57,18 +57,6 @@ Hazen Network Solutions 2025 All rights reserved."
 GREEN="\e[1m\e[1;32m"
 NC="\e[0m"
 
-# Define functions to print colored text
-printGreen() {
-    echo -e "\033[0;32m$1\033[0m"
-}
-
-printRed() {
-    echo -e "\033[0;31m$1\033[0m"
-}
-
-printYellow() {
-    echo -e "\033[0;33m$1\033[0m"
-}
 
 # Functions for printing messages
 printGreen() {
@@ -82,6 +70,17 @@ printLine() {
 printLogo() {
     echo -e "${GREEN}${LOGO}${NC}"
     printLine
+}
+printGreen() {
+    echo -e "\033[0;32m$1\033[0m"
+}
+
+printRed() {
+    echo -e "\033[0;31m$1\033[0m"
+}
+
+printYellow() {
+    echo -e "\033[0;33m$1\033[0m"
 }
 
 # Display Logo and Welcome Message
