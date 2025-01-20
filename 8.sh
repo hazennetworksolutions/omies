@@ -182,10 +182,14 @@ main_menu() {
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
-            "Show total NFTs in Onchain OMies collection")
-                printGreen "Connecting to Stargaze's database" 
+            "Tell me important details about the collection.)
+                printGreen "Connecting to Stargazes database" 
                 sleep 3
                 echo "There are a total of 8888 NFTs in the Onchain OMies collection."
+                sleep 3
+                echo "The floor price is approximately around 180 OM."
+                sleep 3
+                echo "OMies are a diverse bunch of onchain folks lookin for new buddies."
                 sleep 5
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
