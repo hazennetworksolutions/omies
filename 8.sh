@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Logo and Color Definitions
 LOGO="                                                                                                   
                                                                                                   
                          ▒                                           █                              
@@ -63,7 +62,6 @@ GREEN="\e[1m\e[1;32m"
 NC="\e[0m"
 
 
-# Functions for printing messages
 printGreen() {
     echo -e "${GREEN}$1${NC}"
 }
@@ -85,17 +83,17 @@ printYellow() {
     echo -e "\033[0;33m$1\033[0m"
 }
 
-# Display Logo and Welcome Message
+
 clear
 printLogo
 printGreen "Welcome to Hazen's favorite Onchain OMies NFT reveal party"
 
-# Simple Number Guessing Game Function
+
 play_game() {
     printGreen "I have chosen a number between 1 and 88. Can you guess it?"
     sleep 2
 
-    # Generate a random number between 1 and 88
+    
     secret_number=$((RANDOM % 88 + 1))
     attempts=0
 
@@ -104,7 +102,7 @@ play_game() {
         read user_guess
         attempts=$((attempts + 1))
 
-        # Validate user input
+       
         if [[ ! "$user_guess" =~ ^[0-9]+$ ]]; then
             printRed "Please enter a valid number."
             continue
@@ -140,7 +138,7 @@ select opt in "${options[@]}"; do
             echo -e "\nReturning to the main menu..."
             sleep 2
             clear
-            # Show the main menu again by running the script from the provided link
+            
             bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
             continue
             ;;
@@ -154,21 +152,21 @@ select opt in "${options[@]}"; do
         "Send a rocket to the space") 
             printGreen "Sending rocket to the space... Please wait." 
             sleep 2
-            # Display SpaceX link with the new message
+            
             echo "We can't but these guys can help you: https://www.spacex.com"
             sleep 5
-            # Return to the main menu
+           
             clear
             bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
             continue
             ;;
 
         "Show total NFTs in Onchain OMies collection")
-            printGreen "Connecting Mullin's computer" 
+            printGreen "Connecting Mullin's computer..." 
             sleep 2
             printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
             sleep 5
-            # Return to the main menu
+            
             clear
             bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
             continue
