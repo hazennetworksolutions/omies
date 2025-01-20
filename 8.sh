@@ -90,8 +90,9 @@ select opt in "${options[@]}"; do
             printGreen "Please write the message you want to send:"
             read user_message
             printGreen "Sending message to JP Mullin..."
-            sleep 2
+            sleep 3
             printGreen "Message has been sent to JP Mullin!"
+            sleep 2
             echo -e "\nReturning to the main menu..."
             sleep 2
             clear
@@ -110,7 +111,7 @@ select opt in "${options[@]}"; do
             printGreen "Sending rocket to space... Please wait."
             sleep 1
             # Display SpaceX link with the new message
-            echo "We can't but here is the link to SpaceX: https://www.spacex.com"
+            echo "We can't but these guys can help you: https://www.spacex.com"
             sleep 5
             # Return to the main menu
             clear
