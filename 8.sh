@@ -93,6 +93,7 @@ printGreen "Welcome to Hazen's favorite Onchain OMies NFT reveal party"
 # Simple Number Guessing Game Function
 play_game() {
     printGreen "I have chosen a number between 1 and 88. Can you guess it?"
+    sleep 2
 
     # Generate a random number between 1 and 100
     secret_number=$((RANDOM % 88 + 1))
