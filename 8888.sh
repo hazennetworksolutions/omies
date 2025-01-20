@@ -203,3 +203,10 @@ printAsciiArt "$ascii3"
 # İşlem tamam
 printGreen "You can go and check Hazen's favorite here https://www.stargaze.zone/m/onchain-omies/8888
 For the entire collection: https://www.stargaze.zone/m/onchain-omies/tokens"
+
+sleep 10
+            # Return to the main menu
+            clear
+            bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
+            continue
+            ;;
