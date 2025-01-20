@@ -94,7 +94,7 @@ play_game() {
     printGreen "I have chosen a number between 1 and 88. Can you guess it?"
     sleep 2
 
-    # Generate a random number between 1 and 100
+    # Generate a random number between 1 and 88
     secret_number=$((RANDOM % 88 + 1))
     attempts=0
 
@@ -185,7 +185,7 @@ main_menu() {
             "Show total NFTs in Onchain OMies collection")
                 printGreen "Connecting to Stargaze's database" 
                 sleep 3
-                printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
+                echo "There are a total of 8888 NFTs in the Onchain OMies collection."
                 sleep 5
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
