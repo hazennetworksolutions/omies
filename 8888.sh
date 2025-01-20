@@ -242,9 +242,11 @@ fi
 
 # ASCII sanatlarını sırayla gösterme
 printAsciiArt "$ascii1"
-sleep 0.5
+sleep 1
+clear
 printAsciiArt "$ascii2"
-sleep 0.5
+sleep 1
+clear
 printAsciiArt "$ascii3"
 
 # İşlem tamam
