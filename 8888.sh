@@ -218,10 +218,10 @@ fi
 
 # ASCII sanatlarını sırayla gösterme
 printAsciiArt "$ascii1"
-sleep 1
+sleep 2
 clear
 printAsciiArt "$ascii2"
-sleep 1
+sleep 2
 clear
 printAsciiArt "$ascii3"
 
