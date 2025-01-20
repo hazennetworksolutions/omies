@@ -83,7 +83,7 @@ printGreen "Welcome to Hazen's favorite Onchain OMies NFT reveal party"
 # Menu options
 PS3="Please select your option: "
 
-options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to space" "Exit")
+options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to space" "Show total NFTs in Onchain OMies collection" "Exit")
 
 select opt in "${options[@]}"; do
     case $opt in
@@ -110,8 +110,17 @@ select opt in "${options[@]}"; do
         "Send a rocket to space")
             printGreen "Sending rocket to space... Please wait."
             sleep 1
-            # Display SpaceX link
-            echo "Here is the link to SpaceX: https://www.spacex.com"
+            # Display SpaceX link with the new message
+            echo "We can't but here is the link to SpaceX: https://www.spacex.com"
+            sleep 5
+            # Return to the main menu
+            clear
+            bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
+            continue
+            ;;
+
+        "Show total NFTs in Onchain OMies collection")
+            printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
             sleep 5
             # Return to the main menu
             clear
