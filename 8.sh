@@ -76,7 +76,6 @@ printLogo() {
 }
 
 # Display Logo and Welcome Message
-# Display Logo and Welcome Message
 clear
 printLogo
 printGreen "Welcome to Hazen's favorite Onchain OMies NFT reveal party"
@@ -84,7 +83,7 @@ printGreen "Welcome to Hazen's favorite Onchain OMies NFT reveal party"
 # Menu options
 PS3="Please select your option: "
 
-options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Exit")
+options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to space" "Exit")
 
 select opt in "${options[@]}"; do
     case $opt in
@@ -92,9 +91,8 @@ select opt in "${options[@]}"; do
             printGreen "Please write the message you want to send:"
             read user_message
             printGreen "Sending message to JP Mullin..."
-            sleep 3
-            printGreen "Message has been sent to JP Mullin!"
             sleep 2
+            printGreen "Message has been sent to JP Mullin!"
             echo -e "\nReturning to the main menu..."
             sleep 2
             clear
@@ -109,6 +107,18 @@ select opt in "${options[@]}"; do
             break
             ;;
 
+        "Send a rocket to space")
+            printGreen "Sending rocket to space... Please wait."
+            sleep 1
+            # Display SpaceX link
+            echo "Here is the link to SpaceX: https://www.spacex.com"
+            sleep 5
+            # Return to the main menu
+            clear
+            bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
+            continue
+            ;;
+
         "Exit")
             printGreen "Exiting the setup..."
             exit 0
@@ -119,4 +129,3 @@ select opt in "${options[@]}"; do
             ;;
     esac
 done
-
