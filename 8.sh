@@ -106,7 +106,7 @@ select opt in "${options[@]}"; do
             ;;
 
         "Exit")
-            printGreen "Exiting the setup..."
+            printGreen "Exiting the party..."
             exit 0
             ;;
 
