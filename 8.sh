@@ -92,7 +92,7 @@ select opt in "${options[@]}"; do
             printGreen "Please write the message you want to send:"
             read user_message
             printGreen "Sending message to JP Mullin..."
-            sleep 2
+            sleep 3
             printGreen "Message has been sent to JP Mullin!"
             echo -e "\nReturning to the main menu..."
             sleep 2
