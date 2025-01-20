@@ -126,7 +126,7 @@ play_game() {
 # Menu options
 PS3="Please select your option: "
 
-options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to space" "Show total NFTs in Onchain OMies collection" "Play a guessing game" "Exit")
+options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Show total number of NFTs in Onchain OMies collection" "Play a guessing game" "Exit") 
 
 select opt in "${options[@]}"; do
     case $opt in
@@ -151,9 +151,9 @@ select opt in "${options[@]}"; do
             break
             ;;
 
-        "Send a rocket to space")
-            printGreen "Sending rocket to space... Please wait."
-            sleep 1
+        "Send a rocket to the space") 
+            printGreen "Sending rocket to the space... Please wait." 
+            sleep 2
             # Display SpaceX link with the new message
             echo "We can't but these guys can help you: https://www.spacex.com"
             sleep 5
@@ -164,6 +164,8 @@ select opt in "${options[@]}"; do
             ;;
 
         "Show total NFTs in Onchain OMies collection")
+            printGreen "Connecting Mullin's computer" 
+            sleep 2
             printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
             sleep 5
             # Return to the main menu
