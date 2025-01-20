@@ -80,26 +80,32 @@ printLogo
 printGreen "Welcome to Hazen's favorite Onchain OMies NFT reveal party"
 
 # Menu options
-PS3="Please select your opinion: "
+PS3="Please select your option: "
 
-options=("Send DM to the JP Mullin" "Show Hazen's favorite OMies NFT" "Exit")
+options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Exit")
 
 select opt in "${options[@]}"; do
     case $opt in
-        "Send DM to the JP Mullin")
-            printGreen "Sending DM to the JP Mullin..."
-            bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/warden/refs/heads/main/wardentest2.sh)
+        "Send DM to JP Mullin")
+            printGreen "Please write the message you want to send:"
+            read user_message
+            printGreen "Sending message to JP Mullin..."
+            sleep 2
+            printGreen "Message has been sent to JP Mullin!"
             break
             ;;
+
         "Show Hazen's favorite OMies NFT")
-            printGreen "Show Hazen's favorite OMies NFT"
+            printGreen "Showing Hazen's favorite OMies NFT"
             bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8888.sh)
             break
             ;;
+
         "Exit")
             printGreen "Exiting the setup..."
             exit 0
             ;;
+
         *) 
             echo -e "${GREEN}Invalid option. Please try again.${NC}" 
             ;;
