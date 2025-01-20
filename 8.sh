@@ -169,9 +169,10 @@ main_menu() {
                 ;;
 
             "Show Hazen's favorite OMies NFT")
-                printGreen "Showing Hazen's favorite OMies NFT"
-                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
-                ;;
+    printGreen "Showing Hazen's favorite OMies NFT"
+    bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8888.sh)
+    ;;
+
 
             "Send a rocket to the space") 
                 printGreen "Sending rocket to the space... Please wait." 
