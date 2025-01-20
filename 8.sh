@@ -155,66 +155,61 @@ PS3="Please select your option: "
 
 options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Show total number of NFTs in Onchain OMies collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit") 
 
-select opt in "${options[@]}"; do
-    case $opt in
-        "Send DM to JP Mullin")
-            printGreen "Please write the message you want to send:"
-            read user_message
-            printGreen "Sending message to JP Mullin..."
-            sleep 3
-            printGreen "Message has been sent to JP Mullin!"
-            sleep 2
-            echo -e "\nReturning to the main menu..."
-            sleep 2
-            clear
-            continue
-            ;;
+main_menu() {
+    select opt in "${options[@]}"; do
+        case $opt in
+            "Send DM to JP Mullin")
+                printGreen "Please write the message you want to send:"
+                read user_message
+                printGreen "Sending message to JP Mullin..."
+                sleep 3
+                printGreen "Message has been sent to JP Mullin!"
+                sleep 2
+                continue
+                ;;
 
-        "Show Hazen's favorite OMies NFT")
-            printGreen "Showing Hazen's favorite OMies NFT"
-            break
-            ;;
+            "Show Hazen's favorite OMies NFT")
+                printGreen "Showing Hazen's favorite OMies NFT"
+                break
+                ;;
 
-        "Send a rocket to the space") 
-            printGreen "Sending rocket to the space... Please wait." 
-            sleep 2
-            # Display SpaceX link with the new message
-            echo "We can't but these guys can help you: https://www.spacex.com"
-            sleep 5
-            # Return to the main menu
-            clear
-            continue
-            ;;
+            "Send a rocket to the space") 
+                printGreen "Sending rocket to the space... Please wait." 
+                sleep 2
+                echo "We can't but these guys can help you: https://www.spacex.com"
+                sleep 5
+                continue
+                ;;
 
-        "Show total NFTs in Onchain OMies collection")
-            printGreen "Connecting Mullin's computer" 
-            sleep 2
-            printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
-            sleep 5
-            # Return to the main menu
-            clear
-            continue
-            ;;
+            "Show total NFTs in Onchain OMies collection")
+                printGreen "Connecting Mullin's computer" 
+                sleep 2
+                printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
+                sleep 5
+                continue
+                ;;
 
-        "Play a guessing game")
-            play_game
-            clear
-            continue
-            ;;
+            "Play a guessing game")
+                play_game
+                continue
+                ;;
 
-        "Play Rock Paper Scissors")
-            rock_paper_scissors
-            clear
-            continue
-            ;;
+            "Play Rock Paper Scissors")
+                rock_paper_scissors
+                continue
+                ;;
 
-        "Exit")
-            printGreen "Exiting the setup..."
-            exit 0
-            ;;
+            "Exit")
+                printGreen "Exiting the setup..."
+                exit 0
+                ;;
 
-        *) 
-            echo -e "${GREEN}Invalid option. Please try again.${NC}" 
-            ;;
-    esac
-done
+            *) 
+                echo -e "${GREEN}Invalid option. Please try again.${NC}" 
+                ;;
+        esac
+    done
+}
+
+# Call main menu function
+main_menu
