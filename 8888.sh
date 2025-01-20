@@ -184,7 +184,7 @@ ascii3="
 "
 
 # Kullanıcıdan onay alma
-echo -n "Are you ready to see Hazen's favorite Omie? If you are ready, type 'yes': "
+echo -n "Are you ready to see Hazen's favorite Omies? If you are ready, type 'yes': "
 read user_input
 
 if [[ "$user_input" != "yes" ]]; then
