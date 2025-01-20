@@ -75,6 +75,7 @@ printLogo() {
 }
 
 # Display Logo and Welcome Message
+# Display Logo and Welcome Message
 clear
 printLogo
 printGreen "Welcome to Hazen's favorite Onchain OMies NFT reveal party"
@@ -95,7 +96,8 @@ select opt in "${options[@]}"; do
             echo -e "\nReturning to the main menu..."
             sleep 2
             clear
-            # Show the menu again
+            # Show the main menu again by running the script from the provided link
+            bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
             continue
             ;;
 
@@ -106,7 +108,7 @@ select opt in "${options[@]}"; do
             ;;
 
         "Exit")
-            printGreen "Exiting the party..."
+            printGreen "Exiting the setup..."
             exit 0
             ;;
 
