@@ -165,12 +165,12 @@ main_menu() {
                 sleep 3
                 printGreen "Message has been sent to JP Mullin!"
                 sleep 2
-                continue
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
             "Show Hazen's favorite OMies NFT")
                 printGreen "Showing Hazen's favorite OMies NFT"
-                break
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
             "Send a rocket to the space") 
@@ -178,7 +178,7 @@ main_menu() {
                 sleep 2
                 echo "We can't but these guys can help you: https://www.spacex.com"
                 sleep 5
-                continue
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
             "Show total NFTs in Onchain OMies collection")
@@ -186,17 +186,17 @@ main_menu() {
                 sleep 2
                 printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
                 sleep 5
-                continue
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
             "Play a guessing game")
                 play_game
-                continue
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
             "Play Rock Paper Scissors")
                 rock_paper_scissors
-                continue
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
             "Exit")
