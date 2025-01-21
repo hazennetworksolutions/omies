@@ -142,7 +142,7 @@ rock_paper_scissors() {
 
 PS3="Please select your option: "
 
-options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me the details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit") 
+options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me the details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit" "Trigger hidden option")
 
 main_menu() {
     select opt in "${options[@]}"; do
@@ -194,28 +194,20 @@ main_menu() {
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
-             "Trigger hidden option")
-                printGreen "You have selected the hidden option!"
-                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
-                ;;
-
-  "Exit")
+            "Exit")
                 printGreen "Thank you for using Hazen's setup. Have a great day!"
                 exit 0
+                ;;
+
+            "Trigger hidden option")
+                # Bu kısmı tetiklemek için, kullanıcı 8'i seçerse direkt olarak ilgili scripti çalıştırıyoruz.
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
                 ;;
 
             *) 
                 printRed -e "${GREEN}Invalid option. Please try again.${NC}" 
                 ;;
         esac
-
-        # Check if the hidden option (triggered by pressing 8) should be selected
-        echo "Press 8 for the hidden option or any other key to continue..."
-        read -n 1 -s input_key
-        if [[ "$input_key" == "8" ]]; then
-            printGreen "You have selected the hidden option!"
-            bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
-        fi
     done
 }
 
