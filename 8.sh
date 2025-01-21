@@ -200,10 +200,10 @@ main_menu() {
                 ;;
 
             *)
-                # This part is where we check if 8 was pressed, and trigger the hidden option
+                # This part checks if 8 was pressed, or invalid input was given
                 if [ "$REPLY" -eq 8 ]; then
                     bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
-                else
+                elif [[ ! "$REPLY" =~ ^[1-7]$ ]]; then
                     printRed -e "Invalid option. Please try again." 
                 fi
                 ;;
