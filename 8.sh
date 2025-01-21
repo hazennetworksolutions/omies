@@ -123,11 +123,11 @@ play_game() {
 
 # Rock Paper Scissors Game Function
 rock_paper_scissors() {
-     printGreen -e "\nRock, Paper, Scissors! Let's play!"
+    echo -e "\nRock, Paper, Scissors! Let's play!"
     options=("Rock" "Paper" "Scissors")
     
     # Get user choice
-     printGreen "Choose your option:"
+    echo "Choose your option:"
     select user_choice in "${options[@]}"; do
         if [[ -n "$user_choice" ]]; then
             break
@@ -136,17 +136,17 @@ rock_paper_scissors() {
     
     # Get computer choice
     computer_choice=${options[$((RANDOM % 3))]}
-     printGreen -e "Computer chose: $computer_choice"
+    echo -e "Computer chose: $computer_choice"
 
     # Determine winner
     if [[ "$user_choice" == "$computer_choice" ]]; then
-         printGreen "It's a tie!"
+        echo "It's a tie!"
     elif [[ "$user_choice" == "Rock" && "$computer_choice" == "Scissors" ]] ||
          [[ "$user_choice" == "Paper" && "$computer_choice" == "Rock" ]] ||
          [[ "$user_choice" == "Scissors" && "$computer_choice" == "Paper" ]]; then
-         printGreen "You win!"
+        echo "You win!"
     else
-         printGreen "You lose!"
+        echo "You lose!"
     fi
     sleep 4
 }
@@ -154,57 +154,65 @@ rock_paper_scissors() {
 # Menu options
 PS3="Please select your option: "
 
-options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me the details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit")
+options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me the details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit") 
 
 main_menu() {
     select opt in "${options[@]}"; do
         case $opt in
             "Send DM to JP Mullin")
-                 printGreen "Please write the message you want to send:"
+                printGreen "Please write the message you want to send:"
                 read user_message
-                 printGreen "Sending message to JP Mullin..."
+                printGreen "Sending message to JP Mullin..."
                 sleep 3
-                 printGreen "Message has been sent to JP Mullin!"
+                printGreen "Message has been sent to JP Mullin!"
+                sleep 3
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
+
             "Show Hazen's favorite OMies NFT")
-                 printGreen "Showing Hazen's favorite OMies NFT"
+                printGreen "Showing Hazen's favorite OMies NFT"
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8888.sh)
                 ;;
-            "Send a rocket to the space")
-                 printGreen "Sending rocket to the space... Please wait."
+
+            "Send a rocket to the space") 
+                printGreen "Sending rocket to the space... Please wait." 
                 sleep 3
-                 printGreen "We can't but these guys can help you: https://www.spacex.com"
+                echo "We can't but these guys can help you: https://www.spacex.com"
+                sleep 5
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
+
             "Tell me the details about the collection")
-                 printGreen "Connecting to Stargazes database..."
+                printGreen "Connecting to Stargazes database..." 
                 sleep 3
-                 printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
+                echo "There are a total of 8888 NFTs in the Onchain OMies collection."
                 sleep 3
-                 printGreen "The floor price is approximately around 180 OM."
+                echo "The floor price is approximately around 180 OM."
                 sleep 3
-                 printGreen "Best offer is approximately around 155 OM."
+                echo "Best offer is approximately around 155 OM."
+                sleep 3
+                echo "OMies are a diverse bunch of onchain folks lookin for new buddies."
+                sleep 5
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
+
             "Play a guessing game")
-                 printGreen "Let's play a guessing game!"
+                play_game
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
+
             "Play Rock Paper Scissors")
-                 printGreen "Starting Rock Paper Scissors game..."
+                rock_paper_scissors
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
-            "Exit")
-                 printGreen "Thank you for using Hazen's setup. Have a great day!"
-                exit 0
-                ;;
-            "")
-                # Eğer hiçbir şey seçilmez ve kullanıcı manuel olarak 8 girerse
-                if [[ $REPLY -eq 8 ]]; then
-                     printGreen "Surprise! Executing the hidden script..."
-                    bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
-                else
-                     printGreen "Invalid option. Please try again."
-                fi
-                ;;
-            *)
-                 printGreen "Invalid option. Please try again."
+
+           "Exit")
+    printGreen "Thank you for using Hazen's setup. Have a great day!"
+    exit 0
+    ;;
+
+            *) 
+                echo -e "${GREEN}Invalid option. Please try again.${NC}" 
                 ;;
         esac
     done
