@@ -54,7 +54,7 @@ LOGO="
                                                                                                     
                                                                                                 
                                                                                                  
-Hazen Network Solutions 2025 All rights reserved. OMie #3166 Rarity Rank #1"
+Hazen Network Solutions 1988 All rights reserved. OMie #3166 Rarity Rank #1"
 GREEN="\e[1m\e[1;32m"
 NC="\e[0m"
 
