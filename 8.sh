@@ -194,24 +194,29 @@ main_menu() {
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
-           "Exit")
-    printGreen "Thank you for using Hazen's setup. Have a great day!"
-    exit 0
-    ;;
+             "Trigger hidden option")
+                printGreen "You have selected the hidden option!"
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
+                ;;
+
+  "Exit")
+                printGreen "Thank you for using Hazen's setup. Have a great day!"
+                exit 0
+                ;;
 
             *) 
                 printRed -e "${GREEN}Invalid option. Please try again.${NC}" 
                 ;;
         esac
+
+        # Check if the hidden option (triggered by pressing 8) should be selected
+        echo "Press 8 for the hidden option or any other key to continue..."
+        read -n 1 -s input_key
+        if [[ "$input_key" == "8" ]]; then
+            printGreen "You have selected the hidden option!"
+            bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
+        fi
     done
 }
 
-trigger_hidden_option() {
-    read user_input
-    if [ "$user_input" == "8" ]; then
-        bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
-    fi
-}
-
 main_menu
-trigger_hidden_option
