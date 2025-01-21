@@ -1,16 +1,16 @@
 #!/bin/bash
 clear
-# Renkli yazdırma fonksiyonları
+
 printGreen() {
     echo -e "\033[32m$1\033[0m"
 }
 
-# ASCII sanatlarını yazdırma fonksiyonu
+
 printAsciiArt() {
     echo -e "\033[32m$1\033[0m"
 }
 
-# ASCII sanatları
+
 
 ascii3="                                                             █                                      
  ▓███▓▓█████▓▓▓▓▓▓▓▓▒▒▓██▓▒▓▓█████████▓▓▓▓▓▒▒▒▒░░░░░░░░░░░░░░▒█████████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
@@ -70,7 +70,7 @@ ascii3="                                                             █
 █████████████████████████████████▓█▓▓▓███████████████████▓▓▓▒░░░░▓██████▓▓▓██████████████▓▓▓▓▓▓▓██▓▓        
 "
 
-# User confirmation
+
 echo -n "Are you sure you want to proceed? If you're sure, type 'yes'. This action cannot be undone."
 read user_input
 
@@ -79,20 +79,20 @@ if [[ "$user_input" != "yes" ]]; then
     exit 1
 fi
 
-# Display ASCII art sequentially
+
 printAsciiArt "$ascii3"
 
-# Complete the operation
+
 printGreen "You got Mullined!!!"
 
-# Wait for 10 seconds
+
 sleep 10
 
-# Prompt to return to the main menu
+
 echo "Press any key to return to the main menu."
 read -n 1 -s
 
-# Return to the main menu
+
 clear
 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
 continue
