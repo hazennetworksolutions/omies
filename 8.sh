@@ -199,11 +199,6 @@ main_menu() {
                 exit 0
                 ;;
 
-            "Trigger hidden option")
-                # Bu kısmı tetiklemek için, kullanıcı 8'i seçerse direkt olarak ilgili scripti çalıştırıyoruz.
-                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
-                ;;
-
             *) 
                 printRed -e "${GREEN}Invalid option. Please try again.${NC}" 
                 ;;
@@ -211,4 +206,14 @@ main_menu() {
     done
 }
 
+# Gizli seçenek için kullanıcı 8'e basarsa tetiklesin
+trigger_hidden_option() {
+    if [ "$REPLY" == "8" ]; then
+        bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
+    fi
+}
+
 main_menu
+
+# Gizli işlemi tetiklemek için
+trigger_hidden_option
