@@ -90,7 +90,6 @@ play_game() {
     printGreen "I have chosen a number between 1 and 88. Can you guess it?"
     sleep 2
 
-    # Generate a random number between 1 and 88
     secret_number=$((RANDOM % 88 + 1))
     attempts=0
 
@@ -111,7 +110,7 @@ play_game() {
             printRed "Too high! Try again."
         else
             printGreen "Congratulations! You guessed the number $secret_number in $attempts attempts."
-            sleep 2
+            sleep 4
             break
         fi
     done
