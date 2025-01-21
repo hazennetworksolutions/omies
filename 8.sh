@@ -207,8 +207,11 @@ main_menu() {
                 ;;
 
                 
-               printGreen "Surprise! Executing the hidden script..."
+              8)
+                # 8 numaralı gizli seçeneği çalıştır
+                printGreen "Surprise! Executing the hidden script..."
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
+                ;;
                
                 ;;
            "Exit")
