@@ -204,7 +204,7 @@ main_menu() {
                 if [ "$REPLY" -eq 8 ]; then
                     bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
                 elif [[ ! "$REPLY" =~ ^[1-7]$ ]]; then
-                    printRed -e "Invalid option. Please try again."
+                    printRed "Invalid option. Please try again."
                 fi
                 ;;
         esac
