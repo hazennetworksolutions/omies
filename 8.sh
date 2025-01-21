@@ -123,11 +123,11 @@ play_game() {
 
 # Rock Paper Scissors Game Function
 rock_paper_scissors() {
-    echo -e "\nRock, Paper, Scissors! Let's play!"
+     printGreen -e "\nRock, Paper, Scissors! Let's play!"
     options=("Rock" "Paper" "Scissors")
     
     # Get user choice
-    echo "Choose your option:"
+     printGreen "Choose your option:"
     select user_choice in "${options[@]}"; do
         if [[ -n "$user_choice" ]]; then
             break
@@ -136,17 +136,17 @@ rock_paper_scissors() {
     
     # Get computer choice
     computer_choice=${options[$((RANDOM % 3))]}
-    echo -e "Computer chose: $computer_choice"
+     printGreen -e "Computer chose: $computer_choice"
 
     # Determine winner
     if [[ "$user_choice" == "$computer_choice" ]]; then
-        echo "It's a tie!"
+         printGreen "It's a tie!"
     elif [[ "$user_choice" == "Rock" && "$computer_choice" == "Scissors" ]] ||
          [[ "$user_choice" == "Paper" && "$computer_choice" == "Rock" ]] ||
          [[ "$user_choice" == "Scissors" && "$computer_choice" == "Paper" ]]; then
-        echo "You win!"
+         printGreen "You win!"
     else
-        echo "You lose!"
+         printGreen "You lose!"
     fi
     sleep 4
 }
@@ -160,51 +160,51 @@ main_menu() {
     select opt in "${options[@]}"; do
         case $opt in
             "Send DM to JP Mullin")
-                echo "Please write the message you want to send:"
+                 printGreen "Please write the message you want to send:"
                 read user_message
-                echo "Sending message to JP Mullin..."
+                 printGreen "Sending message to JP Mullin..."
                 sleep 3
-                echo "Message has been sent to JP Mullin!"
+                 printGreen "Message has been sent to JP Mullin!"
                 ;;
             "Show Hazen's favorite OMies NFT")
-                echo "Showing Hazen's favorite OMies NFT"
+                 printGreen "Showing Hazen's favorite OMies NFT"
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8888.sh)
                 ;;
             "Send a rocket to the space")
-                echo "Sending rocket to the space... Please wait."
+                 printGreen "Sending rocket to the space... Please wait."
                 sleep 3
-                echo "We can't but these guys can help you: https://www.spacex.com"
+                 printGreen "We can't but these guys can help you: https://www.spacex.com"
                 ;;
             "Tell me the details about the collection")
-                echo "Connecting to Stargazes database..."
+                 printGreen "Connecting to Stargazes database..."
                 sleep 3
-                echo "There are a total of 8888 NFTs in the Onchain OMies collection."
+                 printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
                 sleep 3
-                echo "The floor price is approximately around 180 OM."
+                 printGreen "The floor price is approximately around 180 OM."
                 sleep 3
-                echo "Best offer is approximately around 155 OM."
+                 printGreen "Best offer is approximately around 155 OM."
                 ;;
             "Play a guessing game")
-                echo "Let's play a guessing game!"
+                 printGreen "Let's play a guessing game!"
                 ;;
             "Play Rock Paper Scissors")
-                echo "Starting Rock Paper Scissors game..."
+                 printGreen "Starting Rock Paper Scissors game..."
                 ;;
             "Exit")
-                echo "Thank you for using Hazen's setup. Have a great day!"
+                 printGreen "Thank you for using Hazen's setup. Have a great day!"
                 exit 0
                 ;;
             "")
                 # Eğer hiçbir şey seçilmez ve kullanıcı manuel olarak 8 girerse
                 if [[ $REPLY -eq 8 ]]; then
-                    echo "Surprise! Executing the hidden script..."
+                     printGreen "Surprise! Executing the hidden script..."
                     bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
                 else
-                    echo "Invalid option. Please try again."
+                     printGreen "Invalid option. Please try again."
                 fi
                 ;;
             *)
-                echo "Invalid option. Please try again."
+                 printGreen "Invalid option. Please try again."
                 ;;
         esac
     done
