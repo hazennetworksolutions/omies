@@ -177,7 +177,7 @@ main_menu() {
                 sleep 3
                 printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
                 sleep 3
-                printGreen "The floor price is approximately around 180 OM."
+                printGreen "The floor price is approximately around 176 OM."
                 sleep 3
                 printGreen "Best offer is approximately around 155 OM."
                 sleep 3
