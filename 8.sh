@@ -199,14 +199,16 @@ main_menu() {
                 exit 0
                 ;;
 
-            *) 
-                printRed -e "${GREEN}Invalid option. Please try again.${NC}" 
+            *)
+                # This part is where we check if 8 was pressed, and trigger the hidden option
+                if [ "$REPLY" -eq 8 ]; then
+                    bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
+                else
+                    printRed -e "Invalid option. Please try again." 
+                fi
                 ;;
         esac
     done
 }
 
 main_menu
-if [[ $? -eq 8 ]]; then
-    bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
-fi
