@@ -1,12 +1,15 @@
+#!/bin/bash
 clear
 
 printGreen() {
     echo -e "\033[32m$1\033[0m"
 }
 
+
 printAsciiArt() {
     echo -e "\033[32m$1\033[0m"
 }
+
 
 ascii1="
                                                                                                     
@@ -171,13 +174,15 @@ ascii3="█                                                   █
                                                                                                                   
 "
 
-printGreen -n "Are you ready to see Hazen's favorite Omies? If you are ready, type 'yes': "
+
+echo -n "Are you ready to see Hazen's favorite Omies? If you are ready, type 'yes': "
 read user_input
 
 if [[ "$user_input" != "yes" ]]; then
     echo "Operation canceled."
     exit 1
 fi
+
 
 printAsciiArt "$ascii1"
 sleep 2
@@ -187,15 +192,18 @@ sleep 2
 clear
 printAsciiArt "$ascii3"
 
+
 printGreen "You can go and check Hazen's favorite here: https://www.stargaze.zone/m/onchain-omies/4732
 For the entire collection: https://www.stargaze.zone/m/onchain-omies/tokens"
 
+
 sleep 8
 
-printGreen "Press any key to return to the main menu."
+
+echo "Press any key to return to the main menu."
 read -n 1 -s
 
-clear
 
+clear
 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
 continue
