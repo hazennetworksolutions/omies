@@ -120,7 +120,7 @@ rock_paper_scissors() {
     echo -e "\nRock, Paper, Scissors! Let's play!"
     options=("Rock" "Paper" "Scissors")
     
-    echo "Choose your option:"
+    printYellow "Choose your option:"
     select user_choice in "${options[@]}"; do
         if [[ -n "$user_choice" ]]; then
             break
@@ -131,7 +131,7 @@ rock_paper_scissors() {
     echo -e "Computer chose: $computer_choice"
 
     if [[ "$user_choice" == "$computer_choice" ]]; then
-        echo "It's a tie!"
+        printYellow "It's a tie!"
     elif [[ "$user_choice" == "Rock" && "$computer_choice" == "Scissors" ]] ||
          [[ "$user_choice" == "Paper" && "$computer_choice" == "Rock" ]] ||
          [[ "$user_choice" == "Scissors" && "$computer_choice" == "Paper" ]]; then
