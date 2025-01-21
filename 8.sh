@@ -189,7 +189,7 @@ main_menu() {
                 sleep 3
                 echo "The floor price is approximately around 180 OM."
                 sleep 3
-                echo "Best offer is approximately around 170 OM."
+                echo "Best offer is approximately around 155 OM."
                 sleep 3
                 echo "OMies are a diverse bunch of onchain folks lookin for new buddies."
                 sleep 5
