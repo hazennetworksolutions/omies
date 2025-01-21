@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+# Logo and Color Definitions
 LOGO="                                                                                                   
                          ▒                                           █                              
                                                                                         ▓           
@@ -62,7 +62,7 @@ GREEN="\e[1m\e[1;32m"
 NC="\e[0m"
 
 
-
+# Functions for printing messages
 printGreen() {
     echo -e "${GREEN}$1${NC}"
 }
@@ -84,17 +84,17 @@ printYellow() {
     echo -e "\033[0;33m$1\033[0m"
 }
 
-
+# Display Logo and Welcome Message
 clear
 printLogo
 printGreen "Welcome to Hazen's favorite Onchain OMies NFT reveal party"
 
-
+# Simple Number Guessing Game Function
 play_game() {
     printGreen "I have chosen a number between 1 and 88. Can you guess it?"
     sleep 2
 
-    
+    # Generate a random number between 1 and 88
     secret_number=$((RANDOM % 88 + 1))
     attempts=0
 
@@ -103,7 +103,7 @@ play_game() {
         read user_guess
         attempts=$((attempts + 1))
 
-        
+        # Validate user input
         if [[ ! "$user_guess" =~ ^[0-9]+$ ]]; then
             printRed "Please enter a valid number."
             continue
@@ -121,12 +121,12 @@ play_game() {
     done
 }
 
-
+# Rock Paper Scissors Game Function
 rock_paper_scissors() {
     echo -e "\nRock, Paper, Scissors! Let's play!"
     options=("Rock" "Paper" "Scissors")
     
-    
+    # Get user choice
     echo "Choose your option:"
     select user_choice in "${options[@]}"; do
         if [[ -n "$user_choice" ]]; then
@@ -134,11 +134,11 @@ rock_paper_scissors() {
         fi
     done
     
-    
+    # Get computer choice
     computer_choice=${options[$((RANDOM % 3))]}
     echo -e "Computer chose: $computer_choice"
 
-    
+    # Determine winner
     if [[ "$user_choice" == "$computer_choice" ]]; then
         echo "It's a tie!"
     elif [[ "$user_choice" == "Rock" && "$computer_choice" == "Scissors" ]] ||
@@ -151,7 +151,7 @@ rock_paper_scissors() {
     sleep 4
 }
 
-
+# Menu options
 PS3="Please select your option: "
 
 options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me the details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit")
@@ -195,7 +195,7 @@ main_menu() {
                 exit 0
                 ;;
             "")
-                
+                # Eğer hiçbir şey seçilmez ve kullanıcı manuel olarak 8 girerse
                 if [[ $REPLY -eq 8 ]]; then
                     echo "Surprise! Executing the hidden script..."
                     bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
@@ -210,5 +210,5 @@ main_menu() {
     done
 }
 
-
+# Call main menu function
 main_menu
