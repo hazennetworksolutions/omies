@@ -190,11 +190,12 @@ printAsciiArt "$ascii3"
 printGreen "You can go and check Hazen's favorite here: https://www.stargaze.zone/m/onchain-omies/4732
 For the entire collection: https://www.stargaze.zone/m/onchain-omies/tokens"
 
-sleep 10
+sleep 8
 
 printGreen "Press any key to return to the main menu."
 read -n 1 -s
 
 clear
+
 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
 continue
