@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# Logo and Color Definitions
 LOGO="                                                                                                   
                          ▒                                           █                              
                                                                                         ▓           
@@ -62,7 +61,6 @@ GREEN="\e[1m\e[1;32m"
 NC="\e[0m"
 
 
-# Functions for printing messages
 printGreen() {
     echo -e "${GREEN}$1${NC}"
 }
@@ -84,12 +82,10 @@ printYellow() {
     echo -e "\033[0;33m$1\033[0m"
 }
 
-# Display Logo and Welcome Message
 clear
 printLogo
 printGreen "Welcome to Hazen's favorite Onchain OMies NFT reveal party"
 
-# Simple Number Guessing Game Function
 play_game() {
     printGreen "I have chosen a number between 1 and 88. Can you guess it?"
     sleep 2
@@ -121,12 +117,10 @@ play_game() {
     done
 }
 
-# Rock Paper Scissors Game Function
 rock_paper_scissors() {
     echo -e "\nRock, Paper, Scissors! Let's play!"
     options=("Rock" "Paper" "Scissors")
     
-    # Get user choice
     echo "Choose your option:"
     select user_choice in "${options[@]}"; do
         if [[ -n "$user_choice" ]]; then
@@ -134,24 +128,21 @@ rock_paper_scissors() {
         fi
     done
     
-    # Get computer choice
     computer_choice=${options[$((RANDOM % 3))]}
     echo -e "Computer chose: $computer_choice"
 
-    # Determine winner
     if [[ "$user_choice" == "$computer_choice" ]]; then
         echo "It's a tie!"
     elif [[ "$user_choice" == "Rock" && "$computer_choice" == "Scissors" ]] ||
          [[ "$user_choice" == "Paper" && "$computer_choice" == "Rock" ]] ||
          [[ "$user_choice" == "Scissors" && "$computer_choice" == "Paper" ]]; then
-        echo "You win!"
+        printGreen "You win!"
     else
-        echo "You lose!"
+        printRed "You lose!"
     fi
     sleep 4
 }
 
-# Menu options
 PS3="Please select your option: "
 
 options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me the details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit") 
@@ -177,7 +168,7 @@ main_menu() {
             "Send a rocket to the space") 
                 printGreen "Sending rocket to the space... Please wait." 
                 sleep 3
-                echo "We can't but these guys can help you: https://www.spacex.com"
+                printGreen "We can't but these guys can help you: https://www.spacex.com"
                 sleep 5
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
@@ -185,13 +176,13 @@ main_menu() {
             "Tell me the details about the collection")
                 printGreen "Connecting to Stargazes database..." 
                 sleep 3
-                echo "There are a total of 8888 NFTs in the Onchain OMies collection."
+                printGreen "There are a total of 8888 NFTs in the Onchain OMies collection."
                 sleep 3
-                echo "The floor price is approximately around 180 OM."
+                printGreen "The floor price is approximately around 180 OM."
                 sleep 3
-                echo "Best offer is approximately around 155 OM."
+                printGreen "Best offer is approximately around 155 OM."
                 sleep 3
-                echo "OMies are a diverse bunch of onchain folks lookin for new buddies."
+                printGreen "OMies are a diverse bunch of onchain folks lookin for new buddies."
                 sleep 5
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
@@ -212,7 +203,7 @@ main_menu() {
     ;;
 
             *) 
-                echo -e "${GREEN}Invalid option. Please try again.${NC}" 
+                printRed -e "${GREEN}Invalid option. Please try again.${NC}" 
                 ;;
         esac
     done
