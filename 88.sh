@@ -1,15 +1,19 @@
 #!/bin/bash
 clear
+
+# Function to print in green
 printGreen() {
     echo -e "\033[32m$1\033[0m"
 }
 
+# Function to print ASCII art in green
 printAsciiArt() {
     echo -e "\033[32m$1\033[0m"
 }
 
-
+# ASCII art string
 ascii3="
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -66,23 +70,29 @@ ascii3="
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 "
 
-printGreen -n "Are you sure you want to proceed? If you're sure, type 'yes'. This action cannot be undone."
+# Prompt user for confirmation
+printGreen "Are you sure you want to proceed? If you're sure, type 'yes'. This action cannot be undone."
 read user_input
 
+# Check if user input is 'yes'
 if [[ "$user_input" != "yes" ]]; then
     echo "Operation canceled."
     exit 1
 fi
 
+# Display ASCII art
 printAsciiArt "$ascii3"
 
+# Display confirmation message
 printGreen "You got Mullined!!!"
 
+# Wait for 10 seconds
 sleep 10
 
+# Prompt to press any key to return to the main menu
 echo "Press any key to return to the main menu."
 read -n 1 -s
 
+# Clear the screen and execute another script
 clear
 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
-continue
