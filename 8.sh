@@ -206,6 +206,11 @@ main_menu() {
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
+                
+               printGreen "Surprise! Executing the hidden script..."
+                bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/88.sh)
+               
+                ;;
            "Exit")
     printGreen "Thank you for using Hazen's setup. Have a great day!"
     exit 0
