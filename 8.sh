@@ -206,10 +206,10 @@ main_menu() {
                 bash <(curl -s https://raw.githubusercontent.com/hazennetworksolutions/omies/refs/heads/main/8.sh)
                 ;;
 
-            "Exit")
-                printGreen "Exiting the setup..."
-                exit 0
-                ;;
+           "Exit")
+    printGreen "Thank you for using Hazen's setup. Have a great day!"
+    exit 0
+    ;;
 
             *) 
                 echo -e "${GREEN}Invalid option. Please try again.${NC}" 
