@@ -142,7 +142,7 @@ rock_paper_scissors() {
 
 PS3="Please select your option: "
 
-options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me the details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit" "Trigger hidden option")
+options=("Send DM to JP Mullin" "Show Hazen's favorite OMies NFT" "Send a rocket to the space" "Tell me the details about the collection" "Play a guessing game" "Play Rock Paper Scissors" "Exit")
 
 main_menu() {
     select opt in "${options[@]}"; do
